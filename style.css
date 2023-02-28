@@ -1,9 +1,8 @@
 :root {
-    --sidebar-back: rgba(253, 207, 217, 0.637);
-    --seach-back: rgb(252, 247, 217);
-    --projects-back: rgb(224, 250, 241);
-    --announce-back: rgb(210, 230, 252);
-    --card-text-color: white;
+    --pink: rgba(253, 207, 217, 0.637);
+    --yellow: rgb(252, 247, 217);
+    --green: rgb(224, 250, 241);
+    --blue: rgb(210, 230, 252);
     --title-font: clamp(20px, 2vw, 2rem);
     --main-font: clamp(16px, 1.6vw, 1.5rem);
     --shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -26,18 +25,20 @@ body {
 .sidebar {
     grid-column: 1 / 2;
     grid-row: 1 / 4;
-    background-color: var(--sidebar-back);
+    background-color: var(--pink);
     padding: .5rem;
+    padding-top: 0;
     box-shadow: var(--shadow-two);
 }
 
 .photo {
     width: calc(var(--title-font) + 1rem);
-    margin: .5rem;
+    margin: 1rem;
     border-radius: .5rem;
 }
 
 .logo {
+    margin: 1rem;
     font-size: var(--title-font);
     font-weight: 600;
     display: flex;
@@ -46,17 +47,17 @@ body {
 }
 
 .dashboard {
-    color: var(--seach-back);
+    color: var(--yellow);
     width: var(--title-font);
 }
 
 .menu {
-    background-color: var(--seach-back);
+    background-color: var(--yellow);
     box-shadow: var(--shadow);
 }
 
 .admin {
-    background-color: var(--seach-back);
+    background-color: var(--yellow);
     box-shadow: var(--shadow);
     transform: rotate(.6deg);
     transition: all .2s;
@@ -96,7 +97,7 @@ ul li:hover {
 }
 
 .announce .pin1 {
-    transform: rotateXZ(150deg);
+    transform: rotate(-20deg);
 }
 
 .trending .pin1 {
@@ -105,33 +106,29 @@ ul li:hover {
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-column: 2 / 3;
     grid-row: 2 / 4;
-    background-color: var(--projects-back);
     padding: .5rem;
+}
+.projects a {
+    background-color: var(--green);
+    margin: .5rem;
+    padding: 1rem;
     box-shadow: var(--shadow);
 }
 
 .card {
-    display: flex;
-    justify-content: space-around;
-    align-items: normal;
+    border: solid 1px black;
+    height: 8rem;
     margin: .5rem;
-    opacity: .9;
     transition: all .3s;
+    text-decoration: none;
+    padding: .5rem;
 }
 
 .card:hover {
-    opacity: 1;
     transform:scale(1.01);
-    box-shadow: var(--shadow-two);
-}
-
-.card a {
-    text-decoration: none;
-    padding: .5rem;
-    background-image: linear-gradient(to right, rgba(219, 247, 175, 0.473) , rgba(19, 19, 18, 0.685));
 }
 
 .calculator {
@@ -171,23 +168,20 @@ ul li:hover {
 }
 
 .descr {
-    color: var(--card-text-color);
     text-align: center;
 }
 
 .title {
-    color: var(--card-text-color);
     text-align: center;
     font-size: var(--title-font);
     font-weight: 600;
     margin: 0;
-    box-shadow: var(--shadow-two);
 }
 
 .announce {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-    background-color: var(--announce-back);
+    background-color: var(--blue);
     box-shadow: var(--shadow-two);
     transform: rotate(1deg);
     transition: all .5s;
@@ -200,7 +194,7 @@ ul li:hover {
 .trending {
     grid-column: 3 / 4;
     grid-row: 3 / 4;
-    background-color: var(--projects-back);
+    background-color: var(--blue);
     box-shadow: var(--shadow);
     transform: scale(1.05);
     transform: rotate(-1deg);
@@ -213,4 +207,8 @@ ul li:hover {
 
 a {
     text-decoration: none;
+}
+
+a:visited {
+    color: black;
 }
