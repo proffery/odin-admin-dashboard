@@ -1,4 +1,5 @@
 :root {
+    --orange: rgb(247, 215, 186);
     --pink: rgba(253, 207, 217, 0.637);
     --yellow: rgb(252, 247, 217);
     --green: rgb(224, 250, 241);
@@ -18,7 +19,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: minmax(12rem, 1fr) 3fr 1fr;
     grid-template-rows: .5fr 2fr 2fr;
 }
 
@@ -26,7 +27,7 @@ body {
     grid-column: 1 / 2;
     grid-row: 1 / 4;
     background-color: var(--pink);
-    padding: .5rem;
+    padding: .2rem;
     padding-top: 0;
     box-shadow: var(--shadow-two);
 }
@@ -54,13 +55,17 @@ body {
 .menu {
     background-color: var(--yellow);
     box-shadow: var(--shadow);
+    transition: all .4s;
 }
 
+.menu:hover {
+    transform: scale(1.02);
+}
 .admin {
     background-color: var(--yellow);
     box-shadow: var(--shadow);
     transform: rotate(.6deg);
-    transition: all .2s;
+    transition: all .3s;
 }
 
 .admin:hover {
@@ -74,6 +79,7 @@ body {
 
 ul li {
     margin: 1rem;
+    transition: all .2s;
 }
 
 ul li::marker {
@@ -88,6 +94,13 @@ ul li:hover {
     grid-column: 2 / 4;
     grid-row: 1 / 2;
     box-shadow: var(--shadow-two);
+    background-color: var(--orange);
+    transform: scale(.99);
+    transition: all .5s;
+}
+
+.seach:hover {
+    transform: scale(1);
 }
 
 .pin1 {
@@ -109,26 +122,27 @@ ul li:hover {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-column: 2 / 3;
     grid-row: 2 / 4;
-    padding: .5rem;
+    padding: .1rem;
 }
-.projects a {
+.card {
     background-color: var(--green);
-    margin: .5rem;
+    margin: .1rem;
     padding: 1rem;
     box-shadow: var(--shadow);
-}
-
-.card {
-    border: solid 1px black;
-    height: 8rem;
-    margin: .5rem;
     transition: all .3s;
     text-decoration: none;
-    padding: .5rem;
 }
 
 .card:hover {
-    transform:scale(1.01);
+    transform: rotate(1deg);
+}
+
+.pic {
+    border-radius: .5rem;
+    border: solid 1px black;
+    height: 8rem;
+    margin: .5rem;
+    padding: .5rem;
 }
 
 .calculator {
