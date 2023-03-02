@@ -32,10 +32,9 @@ body {
 .sidebar {
     grid-column: 1 / 2;
     grid-row: 1 / 4;
-    background-color: var(--pink);
+    /* background-color: var(--pink); */
     padding: .2rem;
-    padding-top: 0;
-    box-shadow: var(--shadow-two);
+    /* box-shadow: var(--shadow-two); */
 }
 
 .photo {
@@ -46,34 +45,42 @@ body {
 }
 
 .logo {
-    margin: 1rem;
-    font-size: calc(var(--title-font) + .4rem);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 0;
+    padding-right: .5rem;
+    padding-top: .5rem;
+    font-size: calc(var(--title-font) + .5rem);
 }
 
 .dashboard {
-    margin: .2rem;
-    margin-left: 0;
+    display: flex;
     width: var(--title-font);
     filter: invert(45%);
+    padding: .2rem;
 }
 
 .menu {
-    background-color: var(--yellow);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--pink);
     box-shadow: var(--shadow);
-    transition: all .4s;
+    transform: rotate(-.3deg);
+    transition: all .3s;
 }
 
 .menu:hover {
-    transform: scale(1.02);
+    transform: rotate(0);
 }
 .admin {
+    display: flex;
+    flex-direction: column;
     background-color: var(--yellow);
     box-shadow: var(--shadow);
-    transform: rotate(.6deg);
+    transform: rotate(.8deg);
     transition: all .3s;
+    margin-top: -.5rem;
 }
 
 .admin:hover {
@@ -81,9 +88,18 @@ body {
 }
 
 .menu ul, .admin ul {
-    margin: .5rem;
-    padding: .8rem;
+
+    margin-left: .5rem;
+    padding-left: .8rem;
+    margin-bottom: .5rem;
+    padding-bottom: .5rem;
 }
+
+.admin ul {
+    margin-top: 0;
+    padding-top: 0;
+}
+
 li a {
     display: flex;
     flex-direction: row;
@@ -94,6 +110,7 @@ ul li {
     display: flex;
     flex-direction: row;
     margin: 1rem;
+    margin-top: 0;
     transition: all .2s;
 }
 
@@ -109,18 +126,13 @@ ul li:hover {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: .5fr 1fr;
-    gap: 1rem;
+    gap: .5rem;
     grid-column: 2 / 4;
     grid-row: 1 / 2;
-    box-shadow: var(--shadow-two);
-    background-color: var(--orange);
-    transform: scale(.99);
-    transition: all .5s;
-    padding: 1rem;
-}
-
-.seach:hover {
-    transform: scale(1);
+    /* box-shadow: var(--shadow-two); */
+    /* background-color: var(--orange); */
+   
+    padding-bottom: 0rem;
 }
 
 form div {
@@ -133,15 +145,8 @@ img[alt=Search] {
 input {
     flex: 1;
     margin: .5rem;
-    background-color: var(--orange);
     border-radius: 1rem;
     border: 1px solid var(--font-color);
-}
-
-.user div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 input:focus {
@@ -151,29 +156,89 @@ input:focus {
 }
 
 .seach-bar {
+    margin: .3rem;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 }
 
 .user {
+    display: flex;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    margin: .3rem;
+}
+
+.user div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .greeting {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
 }
 
+.greeting div {
+    margin: 0;
+    padding: 0;
+}
+
+.greeting div img {
+    width: calc(var(--title-font) + 1.5rem);
+}
+
+.hi-there {
+    margin: 0;
+}
+
+.hi-name {
+    font-size: var(--title-font);
+    margin: 0;
+}
+
 .buttons {
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+}
+
+button {
+    font-family: main-font;
+    background-color: var(--blue);
+    border-radius: 1.5rem;
+    border: none;
+    font-size: var(--main-font);
+    height: calc(var(--main-font) + .5rem);
+    width: calc(var(--title-font) + 2.2rem);
+    color: var(--font-color);
+    box-shadow: var(--shadow-two);
+    margin: .5rem;
+    transition: all .2s;
+}
+
+button:hover {
+    transform: scale(.9);
+}
+
+.your-projects {
+    display: flex;
+    justify-content: start;
+    margin: 0;
+    font-size: var(--title-font);
 }
 
 .pin1 {
     position: relative;
     left: 40%;
-    width: calc(var(--title-font) + .3rem);
+    width: var(--title-font);
+    height: calc(var(--title-font) + .5rem);
 }
 
 .announce .pin1 {
@@ -209,7 +274,7 @@ input:focus {
     height: 8rem;
     margin: .5rem;
     padding: 0;
-    filter: grayscale(50%);
+    filter: grayscale(80%);
 }
 
 .thumb img, .eye img, .github img {
@@ -278,7 +343,7 @@ input:focus {
 .announce {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-    background-color: var(--blue);
+    background-color: var(--orange);
     box-shadow: var(--shadow-two);
     transform: rotate(1deg);
     transition: all .5s;
