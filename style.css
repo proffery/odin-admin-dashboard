@@ -25,23 +25,22 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: minmax(12rem, 1fr) 3fr 1fr;
+    grid-template-columns: 1fr 2.5fr 1fr;
     grid-template-rows: .5fr 2fr 2fr;
 }
 
 .sidebar {
+    display: flex;
+    flex-direction: column;
     grid-column: 1 / 2;
     grid-row: 1 / 4;
-    /* background-color: var(--pink); */
     padding: .2rem;
-    /* box-shadow: var(--shadow-two); */
 }
 
 .photo {
     width: calc(var(--title-font) + 1rem);
     border-radius: 1.5rem;
-    margin-left: .5rem;
-    margin-right: .5rem;
+    margin: .5rem;
 }
 
 .logo {
@@ -66,13 +65,8 @@ body {
     flex-direction: column;
     background-color: var(--pink);
     box-shadow: var(--shadow);
-    transform: rotate(-.3deg);
-    transition: all .3s;
 }
 
-.menu:hover {
-    transform: rotate(0);
-}
 .admin {
     display: flex;
     flex-direction: column;
@@ -126,13 +120,10 @@ ul li:hover {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: .5fr 1fr;
-    gap: .5rem;
+    gap: 0rem;
     grid-column: 2 / 4;
     grid-row: 1 / 2;
-    /* box-shadow: var(--shadow-two); */
-    /* background-color: var(--orange); */
-   
-    padding-bottom: 0rem;
+    padding: .2rem;
 }
 
 form div {
@@ -193,6 +184,7 @@ input:focus {
 
 .hi-there {
     margin: 0;
+    font-size: calc(var(--main-font) - .1rem);
 }
 
 .hi-name {
@@ -202,7 +194,7 @@ input:focus {
 
 .buttons {
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     grid-column: 2 / 3;
@@ -228,10 +220,11 @@ button:hover {
 }
 
 .your-projects {
-    display: flex;
-    justify-content: start;
-    margin: 0;
+    grid-column: 1 / 2;
+    margin: auto;
     font-size: var(--title-font);
+    font-weight: 600;
+    text-align: center;
 }
 
 .pin1 {
@@ -274,7 +267,6 @@ button:hover {
     height: 8rem;
     margin: .5rem;
     padding: 0;
-    filter: grayscale(80%);
 }
 
 .thumb img, .eye img, .github img {
@@ -347,10 +339,20 @@ button:hover {
     box-shadow: var(--shadow-two);
     transform: rotate(1deg);
     transition: all .5s;
+    padding: .5rem;
 }
 
 .announce:hover {
     transform: rotate(0);
+}
+
+.announce-title {
+    font-weight: 600;
+    font-size: calc(var(--main-font) - .1rem);
+}
+
+.announce-descr {
+    font-size: calc(var(--main-font) - .1rem);
 }
 
 .trending {
@@ -360,6 +362,24 @@ button:hover {
     box-shadow: var(--shadow);
     transform: scale(1.05);
     transform: rotate(-1deg);
+    padding-left: .0rem;
+}
+.trending-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.trending-text p {
+    margin: 0;
+    font-size: calc(var(--main-font) - .1rem);
+}
+
+.trending-name {
+    font-weight: 600;
+}
+
+.trending-container {
+    display: flex;
 }
 
 .trending:hover {
