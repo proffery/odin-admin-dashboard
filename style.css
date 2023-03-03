@@ -1,31 +1,33 @@
 @font-face {
     font-family: main-font;
-    src: url(./fonts/Caveat-VariableFont_wght.ttf);
+    src: url(./fonts/SofiaSansCondensed-VariableFont_wght.ttf);
 }
 :root {
-    --orange: rgb(247, 215, 186);
-    --pink: rgba(253, 207, 217, 0.637);
-    --yellow: rgb(252, 247, 217);
-    --green: rgb(224, 250, 241);
-    --blue: rgb(210, 230, 252);
+    --orange: rgb(255, 236, 218);
+    --pink: rgba(255, 226, 232, 0.637);
+    --yellow: rgb(253, 249, 223);
+    --green: rgb(234, 255, 248);
+    --blue: rgb(226, 240, 255);
     --title-font: clamp(20px, 2vw, 2rem);
     --main-font: clamp(16px, 1.6vw, 1.5rem);
     --shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     --shadow-two: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     --font-color:rgb(124, 113, 128);
+    --background-main-color: #f8f8f8;
 }
 
 body {
     font-family: main-font;
     color: var(--font-color);
     font-size: var(--main-font);
+    background-color: var(--background-main-color);
     margin: 0;
     overflow-x: hidden;
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: .5fr 2fr 2fr;
 }
 
@@ -40,7 +42,7 @@ body {
 .photo {
     width: calc(var(--title-font) + 1rem);
     border-radius: 1.5rem;
-    margin: .5rem;
+    margin: .3rem;
 }
 
 .logo {
@@ -49,15 +51,16 @@ body {
     justify-content: center;
     padding-left: 0;
     padding-right: .5rem;
-    padding-top: .5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     font-size: calc(var(--title-font) + .5rem);
+    transform: scale(1.15);
 }
 
 .dashboard {
     display: flex;
     width: var(--title-font);
     filter: invert(45%);
-    padding: .2rem;
 }
 
 .menu {
@@ -65,6 +68,7 @@ body {
     flex-direction: column;
     background-color: var(--pink);
     box-shadow: var(--shadow);
+    margin-top: 0;
 }
 
 .admin {
@@ -75,6 +79,7 @@ body {
     transform: rotate(.8deg);
     transition: all .3s;
     margin-top: -.5rem;
+    padding-top: .5rem;
 }
 
 .admin:hover {
@@ -83,8 +88,8 @@ body {
 
 .menu ul, .admin ul {
 
-    margin-left: .5rem;
-    padding-left: .8rem;
+    margin-left: 0;
+    padding-left: 0;
     margin-bottom: .5rem;
     padding-bottom: .5rem;
 }
@@ -138,11 +143,12 @@ input {
     margin: .5rem;
     border-radius: 1rem;
     border: 1px solid var(--font-color);
+    background-color: var(--background-main-color);
 }
 
 input:focus {
     box-shadow: var(--shadow);
-    border: 1px solid blue;
+    border: 1px solid var(--font-color);
     outline: none;
 }
 
@@ -157,10 +163,12 @@ input:focus {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     margin: .3rem;
+    justify-content: center;
 }
 
 .user div {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -355,15 +363,21 @@ button:hover {
     font-size: calc(var(--main-font) - .1rem);
 }
 
-.trending {
+.trending {    
     grid-column: 3 / 4;
     grid-row: 3 / 4;
     background-color: var(--blue);
     box-shadow: var(--shadow);
     transform: scale(1.05);
     transform: rotate(-1deg);
-    padding-left: .0rem;
+    padding: .5rem;
 }
+
+.trending-content {
+    display: flex;
+    flex-direction: column;
+} 
+
 .trending-text {
     display: flex;
     flex-direction: column;
@@ -375,11 +389,18 @@ button:hover {
 }
 
 .trending-name {
+    font-size: calc(var(--main-font) - .1rem);
     font-weight: 600;
 }
 
 .trending-container {
     display: flex;
+    margin-top: .5rem;
+}
+
+.trending-container p {
+    display: flex;
+    margin: 0;
 }
 
 .trending:hover {
