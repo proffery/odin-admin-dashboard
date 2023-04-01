@@ -252,12 +252,15 @@ button:hover {
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     grid-column: 2 / 3;
     grid-row: 2 / 4;
     padding: .1rem;
 }
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: var(--green);
     margin: .1rem;
     padding: .5rem;
@@ -271,15 +274,17 @@ button:hover {
 }
 
 .pic {
+    display: flex;
     border-radius: .5rem;
-    height: 8rem;
+    min-height: 10rem;
     margin: .5rem;
     padding: 0;
 }
 
 .thumb img, .eye img, .github img {
     width: var(--main-font);
-    margin-left: .5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     filter: invert(45%);
 }
 
